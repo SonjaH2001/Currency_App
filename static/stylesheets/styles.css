@@ -1,0 +1,8 @@
+body {
+    background: lightcyan;
+    font-family: "Bauhaus 93";
+}
+
+input, button, select {
+    margin: 5px;
+}
