@@ -2,8 +2,17 @@
     <h1>Currency Converter</h1>
 
     <form action="/convert" method="GET">
-        <label for="dollar">Amount of Dollars</label>
-        <input type="number" step="any" name="dollar_amount" id="dollar"/>
+
+        <label for="baseCurrency">Amount of Currency</label>
+        <input type="number" step="any" name="baseCurrency_amount" id="baseCurrency"/>
+        <br>
+
+        <label for="from_currency">Convert From</label>
+        <select name="from_currency" id="from_currency">
+            <option value="EUR">Euros</option>
+            <option value="JPY">Japanese Yen</option>
+            <option value="USA">American</option>
+        </select>
         <br>
         <label for="to_currency">Convert To</label>
         <select name="to_currency" id="to_currency">
@@ -12,11 +21,6 @@
             <option value="USA">American</option>
         </select>
         <br>
-        <label for="from_currency">Convert From</label>
-        <select name="from_currency" id="from_currency">
-            <option value="EUR">Euros</option>
-            <option value="JPY">Japanese Yen</option>
-            <option value="USA">American</option>
-        </select>
+
         <button type="submit">Convert</button>
     </form>

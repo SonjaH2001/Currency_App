@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var exchangeRates = { 'EUR': 0.94, 'JPY' : 112.86};
+var exchangeRates = { 'EUR': 0.94, 'JPY' : 112.86, 'USA' : 1.00 };
 
 /* handle GET request for homepage*/
 router.get('/', function(req, res){
@@ -14,13 +14,16 @@ router.get('/', function(req, res){
 //     res.render('index');
 
 router.get('/convert', function(req, res) {
-    var dollars = req.query.dollar_amount;
+    var amount = req.query.baseCurrency_amount;
     var convertTo = req.query.to_currency;
+    var convertFrom = req.query.from_currency;
     //res.send ('to do: convert..)
-    var rate = exchangeRates[convertTo];
-    result = dollars * rate;
+    var baseToDollarsRate = exchangeRates[convertFrom];
+    var amountOfDollars = amount/baseToDollarsRate;
+    var dollarsToTargetRate = exchangeRates[convertTo];
+    result = dollarsToTargetRate * amountOfDollars;
 
-    res.render('results', { dollars : dollars, result : result, currency: convertTo})
+    res.render('results', { dollars : amount, result : result, toCurrency: convertTo})
 });
 
 module.exports = router;
