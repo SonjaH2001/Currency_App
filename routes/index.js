@@ -23,7 +23,7 @@ router.get('/convert', function(req, res) {
     var dollarsToTargetRate = exchangeRates[convertTo];
     result = dollarsToTargetRate * amountOfDollars;
 
-    res.render('results', { dollars : amount, result : result, toCurrency: convertTo})
+    res.render('results', { inputAmount : amount, result : result,fromCurrency : convertFrom , toCurrency: convertTo})
 });
 
 module.exports = router;
