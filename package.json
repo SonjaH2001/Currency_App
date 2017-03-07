@@ -8,5 +8,9 @@
   },
   "description": "currency convert",
   "main": "app.js",
-  "author": "SonjaH1"
+  "author": "SonjaH1",
+  "engines": {
+    "node":"6.9.2",
+    "npm":"3.10.9"
+  }
 }
