@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 app.use('/', routes);
 app.use('/about', about);
 
-app.listen(process.env.POR || 3000, function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log('Currency app running on port 3000');
 })
 
